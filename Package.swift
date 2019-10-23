@@ -12,9 +12,8 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(
-            name: "MyNetworkingPackage",
-            targets: ["MyNetworkingPackage"]),
+        .library(name: "MyNetworkingStaticPackage", type: .static,  targets: ["MyNetworkingPackage"]),
+        .library(name: "MyNetworkingDynamicPackage", type: .dynamic,  targets: ["MyNetworkingPackage"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -31,3 +30,6 @@ let package = Package(
             dependencies: ["MyNetworkingPackage"]),
     ]
 )
+
+
+
